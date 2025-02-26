@@ -410,7 +410,7 @@
 
             // Construct the message
             let whatsappMessage = `Nomor Invoice: ${invoiceNumber}\n`;
-            whatsappMessage += `*Informasi Pelanggan:\nNama: ${name}\nAlamat: ${address}\nTelepon: ${phone}\nTanggal Transaksi: ${transactionDate}\n\n*Daftar Produk*:\n`;
+            whatsappMessage += `*Informasi Pelanggan*:\nNama: ${name}\nAlamat: ${address}\nTelepon: ${phone}\nTanggal Transaksi: ${transactionDate}\n\n*Daftar Produk*:\n`;
 
             tableData.forEach((item, index) => {
                 whatsappMessage += `Item ${index + 1}:\n`;
