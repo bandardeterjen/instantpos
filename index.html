@@ -242,7 +242,7 @@
 
             newRow.innerHTML = `
                 <td>${productName}</td>
-                <td>$${productPrice.toFixed(2)}</td>
+                <td>Rp ${productPrice.toFixed(2)}</td>
             `;
 
             tableBody.appendChild(newRow);
@@ -420,10 +420,10 @@
 
             // Add total price, discount, down payment, and final price to the message
             const finalPrice = totalPrice - discountAmount - downPaymentAmount;
-            whatsappMessage += `Total Price: $${totalPrice.toFixed(2)}\n`;
-            whatsappMessage += `Discount: $${discountAmount.toFixed(2)}\n`;
-            whatsappMessage += `Down Payment (DP): $${downPaymentAmount.toFixed(2)}\n`;
-            whatsappMessage += `Final Price: $${finalPrice.toFixed(2)}`;
+            whatsappMessage += `Total Price: Rp ${totalPrice.toFixed(2)}\n`;
+            whatsappMessage += `Discount: Rp ${discountAmount.toFixed(2)}\n`;
+            whatsappMessage += `Down Payment (DP): Rp ${downPaymentAmount.toFixed(2)}\n`;
+            whatsappMessage += `Final Price: Rp ${finalPrice.toFixed(2)}`;
 
             // Encode the message for WhatsApp URL
             const encodedMessage = encodeURIComponent(whatsappMessage);
