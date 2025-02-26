@@ -187,10 +187,10 @@
                     <!-- Summary products will be displayed here -->
                 </tbody>
             </table>
-            <div class="total-price" id="summaryTotalPrice">Total Harga: Rp0</div>
-            <div class="total-price" id="summaryDiscount">Discount: Rp0</div>
-            <div class="total-price" id="summaryDP">Down Payment (DP): Rp0</div>
-            <div class="total-price" id="summaryFinalPrice">Harga Akhir: Rp0</div>
+            <div class="total-price" id="summaryTotalPrice">Total Harga: Rp 0</div>
+            <div class="total-price" id="summaryDiscount">Discount: Rp 0</div>
+            <div class="total-price" id="summaryDP">Down Payment (DP): Rp 0</div>
+            <div class="total-price" id="summaryFinalPrice">Harga Akhir: Rp 0</div>
         </div>
 
         <!-- Action Buttons -->
@@ -227,7 +227,7 @@
 
             newRow.innerHTML = `
                 <td>${productName}</td>
-                <td>Rp${productPrice.toFixed(2)}</td>
+                <td>Rp ${productPrice.toFixed(2)}</td>
             `;
 
             tableBody.appendChild(newRow);
@@ -362,14 +362,14 @@
             txtContent += `\nTotal Harga: Rp ${totalPrice.toFixed(2)}\n`;
             txtContent += `Discount: Rp ${discountAmount.toFixed(2)}\n`;
             txtContent += `Down Payment (DP): Rp ${downPaymentAmount.toFixed(2)}\n`;
-            txtContent += `Harga Akhir: $${(totalPrice - discountAmount - downPaymentAmount).toFixed(2)}\n`;
+            txtContent += `Harga Akhir: Rp ${(totalPrice - discountAmount - downPaymentAmount).toFixed(2)}\n`;
 
             // Create a Blob and download the TXT file
             const blob = new Blob([txtContent], { type: 'text/plain' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'price_list_summary.txt';
+            a.download = 'transaksi_anda.txt';
             a.click();
             URL.revokeObjectURL(url);
         });
@@ -409,7 +409,7 @@
             whatsappMessage += `Total Harga: Rp ${totalPrice.toFixed(2)}\n`;
             whatsappMessage += `Discount: Rp ${discountAmount.toFixed(2)}\n`;
             whatsappMessage += `Down Payment (DP): Rp ${downPaymentAmount.toFixed(2)}\n`;
-            whatsappMessage += `Harga Akhir: $${finalPrice.toFixed(2)}`;
+            whatsappMessage += `Harga Akhir: Rp ${finalPrice.toFixed(2)}`;
 
             // Encode the message for WhatsApp URL
             const encodedMessage = encodeURIComponent(whatsappMessage);
