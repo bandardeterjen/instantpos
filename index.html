@@ -169,7 +169,7 @@
         </table>
 
         <!-- Total Price -->
-        <div class="total-price" id="totalPrice">Total Price: Rp0</div>
+        <div class="total-price" id="totalPrice">Total Price: $0</div>
 
         <!-- Summary Section -->
         <div class="summary-section" id="summarySection">
@@ -196,6 +196,7 @@
 
         <!-- Action Buttons -->
         <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <button id="printButton">Print</button>
             <button id="exportTXTButton">Export TXT</button>
             <button id="sendToWhatsApp">Send to WhatsApp</button>
         </div>
@@ -293,12 +294,12 @@
             });
 
             // Update total price in the summary section
-            document.getElementById('summaryTotalPrice').textContent = `Total Price: Rp${totalPrice.toFixed(2)}`;
-            document.getElementById('totalPrice').textContent = `Total Price: Rp${totalPrice.toFixed(2)}`;
+            document.getElementById('summaryTotalPrice').textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+            document.getElementById('totalPrice').textContent = `Total Price: $${totalPrice.toFixed(2)}`;
 
             // Update final price after applying discount and DP
             const finalPrice = totalPrice - discountAmount - downPaymentAmount;
-            document.getElementById('summaryFinalPrice').textContent = `Final Price: Rp${finalPrice.toFixed(2)}`;
+            document.getElementById('summaryFinalPrice').textContent = `Final Price: $${finalPrice.toFixed(2)}`;
         }
 
         // Apply discount functionality
@@ -314,10 +315,10 @@
             discountAmount = (totalPrice * discountPercentage) / 100;
 
             // Update discount and final price in the summary section
-            document.getElementById('summaryDiscount').textContent = `Discount: Rp${discountAmount.toFixed(2)}`;
+            document.getElementById('summaryDiscount').textContent = `Discount: $${discountAmount.toFixed(2)}`;
 
             const finalPrice = totalPrice - discountAmount - downPaymentAmount;
-            document.getElementById('summaryFinalPrice').textContent = `Final Price: Rp${finalPrice.toFixed(2)}`;
+            document.getElementById('summaryFinalPrice').textContent = `Final Price: $${finalPrice.toFixed(2)}`;
         });
 
         // Apply Down Payment (DP) functionality
@@ -333,10 +334,10 @@
             downPaymentAmount = dpValue;
 
             // Update DP and final price in the summary section
-            document.getElementById('summaryDP').textContent = `Down Payment (DP): Rp${downPaymentAmount.toFixed(2)}`;
+            document.getElementById('summaryDP').textContent = `Down Payment (DP): $${downPaymentAmount.toFixed(2)}`;
 
             const finalPrice = totalPrice - discountAmount - downPaymentAmount;
-            document.getElementById('summaryFinalPrice').textContent = `Final Price: Rp${finalPrice.toFixed(2)}`;
+            document.getElementById('summaryFinalPrice').textContent = `Final Price: $${finalPrice.toFixed(2)}`;
         });
 
         // Print functionality
