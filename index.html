@@ -372,17 +372,17 @@
                 txtContent += `${index + 1}. ${product}\n`;
             });
 
-            txtContent += `\nTotal Price: $${totalPrice.toFixed(2)}\n`;
-            txtContent += `Discount: $${discountAmount.toFixed(2)}\n`;
-            txtContent += `Down Payment (DP): $${downPaymentAmount.toFixed(2)}\n`;
-            txtContent += `Final Price: $${(totalPrice - discountAmount - downPaymentAmount).toFixed(2)}\n`;
+            txtContent += `\nTotal Price: Rp ${totalPrice.toFixed(2)}\n`;
+            txtContent += `Discount: Rp ${discountAmount.toFixed(2)}\n`;
+            txtContent += `Down Payment (DP): Rp ${downPaymentAmount.toFixed(2)}\n`;
+            txtContent += `Final Price: Rp ${(totalPrice - discountAmount - downPaymentAmount).toFixed(2)}\n`;
 
             // Create a Blob and download the TXT file
             const blob = new Blob([txtContent], { type: 'text/plain' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'price_list_summary.txt';
+            a.download = 'your_transaction.txt';
             a.click();
             URL.revokeObjectURL(url);
         });
