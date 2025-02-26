@@ -360,22 +360,23 @@
             });
 
             // Construct the TXT content
-            let txtContent = `Invoice Number: ${invoiceNumber}\n`;
-            txtContent += `Customer Information:\n`;
-            txtContent += `Name: ${name}\n`;
-            txtContent += `Address: ${address}\n`;
-            txtContent += `Phone: ${phone}\n`;
-            txtContent += `Transaction Date: ${transactionDate}\n\n`;
-            txtContent += `Product List:\n`;
+            let txtContent = `Nomor Invoice: ${invoiceNumber}\n`;
+            txtContent += `Informasi Pelanggan:\n`;
+            txtContent += `Nama: ${name}\n`;
+            txtContent += `Alamat: ${address}\n`;
+            txtContent += `Telepon: ${phone}\n`;
+            txtContent += `Tanggal Transaksi: ${transactionDate}\n\n`;
+            txtContent += `Daftar Produk:\n`;
 
             products.forEach((product, index) => {
                 txtContent += `${index + 1}. ${product}\n`;
             });
 
-            txtContent += `\nTotal Price: Rp ${totalPrice.toFixed(2)}\n`;
+            txtContent += `\nTotal Harga: Rp ${totalPrice.toFixed(2)}\n`;
             txtContent += `Discount: Rp ${discountAmount.toFixed(2)}\n`;
             txtContent += `Down Payment (DP): Rp ${downPaymentAmount.toFixed(2)}\n`;
-            txtContent += `Final Price: Rp ${(totalPrice - discountAmount - downPaymentAmount).toFixed(2)}\n`;
+            txtContent += `Harga Akhir: Rp ${(totalPrice - discountAmount - downPaymentAmount).toFixed(2)}\n\n`;
+            txtContent += `Terimakasih sudah membeli produk kami\n`;
 
             // Create a Blob and download the TXT file
             const blob = new Blob([txtContent], { type: 'text/plain' });
