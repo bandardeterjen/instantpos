@@ -375,7 +375,7 @@
             txtContent += `\nTotal Harga: Rp ${totalPrice.toFixed(2)}\n`;
             txtContent += `Discount: Rp ${discountAmount.toFixed(2)}\n`;
             txtContent += `Down Payment (DP): Rp ${downPaymentAmount.toFixed(2)}\n`;
-            txtContent += `Harga Akhir: Rp ${(totalPrice - discountAmount - downPaymentAmount).toFixed(2)}\nTerimakasih sudah membeli produk/jasa kami\n`;`;
+            txtContent += `Harga Akhir: Rp ${(totalPrice - discountAmount - downPaymentAmount).toFixed(2)}\n`;`;
 
             // Create a Blob and download the TXT file
             const blob = new Blob([txtContent], { type: 'text/plain' });
